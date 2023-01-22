@@ -61,10 +61,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker pull ${{ secrets.MY_DOCKERHUB_USERNAME }}/web
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 8000:8000 ${{ secrets.MY_DOCKERHUB_USERNAME }}/web
-
             sudo docker-compose stop
             sudo docker-compose rm web
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
