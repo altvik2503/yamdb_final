@@ -60,7 +60,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker pull altvik2503/web
-            sudo docker stop $(sudo docker ps -a -q)
+            #sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 8000:8000 altvik2503/web
 
             sudo docker-compose stop
