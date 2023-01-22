@@ -22,7 +22,7 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
-        echo "SECRET_KEY="${{ secrets.SECRET_KEY }} >> .env
+        #echo "SECRET_KEY="${{ secrets.SECRET_KEY }} >> .env
         #echo .env
         python -m flake8
         cd api_yamdb/
