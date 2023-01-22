@@ -2,10 +2,8 @@ import datetime as dt
 import re
 
 from django.shortcuts import get_object_or_404
-
 from rest_framework import serializers, validators
-
-from reviews.models import User, Category, Genre, Title, Review, Comment
+from reviews.models import Category, Comment, Genre, Review, Title, User
 
 
 class UserSerializer(serializers.ModelSerializer):

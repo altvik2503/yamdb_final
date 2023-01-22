@@ -1,21 +1,27 @@
 import uuid
 
+from api_yamdb.settings import EMAIL_FROM_DEFAULT
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from django.core.mail import send_mail
-from django.core.exceptions import ObjectDoesNotExist
-
-from rest_framework import filters, viewsets, status, response
+from rest_framework import filters, response, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.permissions import (
-    IsAuthenticatedOrReadOnly,
     AllowAny,
-    IsAuthenticated
+    IsAuthenticated,
+    IsAuthenticatedOrReadOnly,
 )
-from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import (
+    Category,
+    Genre,
+    Review,
+    Title,
+    User,
+)
 
-from api_yamdb.settings import EMAIL_FROM_DEFAULT
 from .mixins import CreateDestroyListViewSet
 from .filter import TitleFilter
 from .permissions import (
@@ -23,23 +29,16 @@ from .permissions import (
     IsAdminOrReadOnly,
     IsAuthorAdminModeratorOrReadOnly
 )
-from reviews.models import (
-    User,
-    Category,
-    Genre,
-    Title,
-    Review
-)
 from .serializers import (
-    UserSerializer,
+    AuthetificationSerializer,
     CategorySerializer,
+    CommentSerializer,
     GenreSerializer,
+    RegistrationSerializer,
+    ReviewSerializer,
     TitleReadSerializer,
     TitleWriteSerializer,
-    ReviewSerializer,
-    CommentSerializer,
-    RegistrationSerializer,
-    AuthetificationSerializer
+    UserSerializer
 )
 
 

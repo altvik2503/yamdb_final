@@ -36,8 +36,7 @@ def create_item(queryset, item):
 
 def format_list(list_item, separator):
     list_item = ''.join(list_item)
-    list_item = list_item.split(separator)
-    return list_item
+    return list_item.split(separator)
 
 
 def create_items(
