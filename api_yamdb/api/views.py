@@ -1,6 +1,5 @@
 import uuid
 
-from api_yamdb.settings import EMAIL_FROM_DEFAULT
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
 from django.db.models import Avg
@@ -8,38 +7,22 @@ from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, response, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework.permissions import (
-    AllowAny,
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly,
-)
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework_simplejwt.tokens import RefreshToken
-from reviews.models import (
-    Category,
-    Genre,
-    Review,
-    Title,
-    User,
-)
+from reviews.models import Category, Genre, Review, Title, User
 
-from .mixins import CreateDestroyListViewSet
+from api_yamdb.settings import EMAIL_FROM_DEFAULT
+
 from .filter import TitleFilter
-from .permissions import (
-    IsAdmin,
-    IsAdminOrReadOnly,
-    IsAuthorAdminModeratorOrReadOnly
-)
-from .serializers import (
-    AuthetificationSerializer,
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    RegistrationSerializer,
-    ReviewSerializer,
-    TitleReadSerializer,
-    TitleWriteSerializer,
-    UserSerializer
-)
+from .mixins import CreateDestroyListViewSet
+from .permissions import (IsAdmin, IsAdminOrReadOnly,
+                          IsAuthorAdminModeratorOrReadOnly)
+from .serializers import (AuthetificationSerializer, CategorySerializer,
+                          CommentSerializer, GenreSerializer,
+                          RegistrationSerializer, ReviewSerializer,
+                          TitleReadSerializer, TitleWriteSerializer,
+                          UserSerializer)
 
 
 @api_view(['POST'])
