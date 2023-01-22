@@ -44,11 +44,15 @@ jobs:
             password: ${{ secrets.MY_DOCKERHUB_PASSWORD }}
         - name: Push to Docker Hub
           uses: docker/build-push-action@v2
+          # with:
+          #   context: .
+          #   file: api_yamdb/Dockerfile
+          #   push: true
+          #   tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/web:latest
           with:
-            context: .
-            file: api_yamdb/Dockerfile
             push: true
-            tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/web:latest
+            tags: ${{ secrets.DOCKER_USERNAME }}/yamdb_final:latest
+            context: api_yamdb
   deploy:
       runs-on: ubuntu-latest
       needs: build_and_push_to_docker_hub
