@@ -48,7 +48,7 @@ jobs:
             context .
             file: api_yamdb/Dockerfile
             push: true
-            tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/web:latest
+            tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/web:latest #
   deploy:
       runs-on: ubuntu-latest
       needs: build_and_push_to_docker_hub
@@ -62,7 +62,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker pull ${{ secrets.MY_DOCKERHUB_USERNAME }}/web
-            #sudo docker stop $(sudo docker ps -a -q)
+            sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 8000:8000 ${{ secrets.MY_DOCKERHUB_USERNAME }}/web
 
             sudo docker-compose stop
