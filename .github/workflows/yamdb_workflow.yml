@@ -51,7 +51,7 @@ jobs:
           #   tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/web:latest
           with:
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/web:latest
+            tags: ${{ secrets.MY_DOCKERHUB_USERNAME }}/yamdb_final:latest
             context: api_yamdb
   deploy:
       runs-on: ubuntu-latest
