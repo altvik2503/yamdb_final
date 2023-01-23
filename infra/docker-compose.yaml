@@ -17,7 +17,7 @@ services:
     depends_on:
       - db
     environment:
-      SECRET_KEY: ${ SECRET_KEY }
+      SECRET_KEY: ${{ SECRET_KEY }}
     env_file:
       - ./.env
 
