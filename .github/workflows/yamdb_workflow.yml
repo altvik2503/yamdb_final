@@ -27,7 +27,7 @@ jobs:
         echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
         cd api_yamdb/
         python manage.py test
-        pytest
+        pytest  ../tests/
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
       runs-on: ubuntu-latest
