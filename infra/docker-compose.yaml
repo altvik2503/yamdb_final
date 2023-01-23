@@ -12,7 +12,7 @@ services:
   # web container
   web:
     build: .
-    image: altvik2503/web:latest
+    image: altvik2503/api_yamdb:latest
     restart: always
     volumes:
       - static_value:/app/api_yamdb/static/
