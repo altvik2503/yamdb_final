@@ -19,8 +19,10 @@ services:
       - media_value:/app/api_yamdb/media/
     depends_on:
       - db
-    env_file:
-      - ./.env
+    # env_file:
+    #   - ./.env
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
 
   # nginx container
   nginx:
