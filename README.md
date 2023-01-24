@@ -38,4 +38,6 @@ ___
 
 *Django, Django Rest Framework, Simple JWT*
 ___
-[Ссылка на GitHub](https://github.com/altvik2503/api_yamdb)
+[Ссылка на GitHub ...](https://github.com/altvik2503/api_yamdb)
+
+[С проектом можно ознакомиться здесь ...](http://altvik2503.ddns.net)
