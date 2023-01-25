@@ -9,7 +9,7 @@ services:
     env_file:
       - ./.env
 
-  # web container
+  # web container #
   web:
     build: .
     image: altvik2503/yamdb_final:latest
