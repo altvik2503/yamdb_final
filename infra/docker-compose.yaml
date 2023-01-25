@@ -12,7 +12,7 @@ services:
   # web container #
   web:
     build:
-      context: ../api_yamdb
+      context: ./api_yamdb
       dockerfile: Dockerfile
     image: altvik2503/yamdb_final:latest
     restart: always
