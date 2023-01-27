@@ -40,4 +40,4 @@ ___
 ___
 [Ссылка на GitHub ...](https://github.com/altvik2503/api_yamdb)
 
-[С проектом можно ознакомиться здесь ...](http://altvik2503.ddns.net)
+[С проектом можно ознакомиться здесь ...](http://altvik2503.ddns.net:8000)

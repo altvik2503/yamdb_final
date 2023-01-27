@@ -11,9 +11,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = False
 
-SECRET_KEY = os.getenv('SECRET_KEY', None if DEBUG else 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs')
+SECRET_KEY = os.getenv(
+    'SECRET_KEY',
+    None if DEBUG else 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
+)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '51.250.9.252', '127.0.0.1', 'localhost', 'altvik2503.ddns.net',
+]
 
 
 # Application definition
