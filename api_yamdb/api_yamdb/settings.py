@@ -132,7 +132,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATIC_DIR  = '/app/poject_static'
+STATIC_DIR = '/app/poject_static'
 STATIC_DIRS = [
     STATIC_DIR,
 ]
