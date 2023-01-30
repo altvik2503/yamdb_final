@@ -11,14 +11,11 @@ services:
 
   # web container
   web:
-    build: .
-      # context: ../api_yamdb
-      # dockerfile: Dockerfile
+    build:
+      context: ../api_yamdb
+      dockerfile: Dockerfile
     image: altvik2503/yamdb_final:latest
     restart: always
-    volumes:
-      - static_value:/app/static/
-      - media_value:/app/media/
     depends_on:
       - db
     env_file:
