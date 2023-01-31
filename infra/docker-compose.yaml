@@ -14,7 +14,7 @@ services:
     build:
       context: ../api_yamdb
       dockerfile: Dockerfile
-    # image: altvik2503/yamdb_final:latest
+    image: altvik2503/yamdb_final:latest
     restart: always
     volumes:
       # Контейнер web будет работать с данными, хранящиеся в томе static_value,
