@@ -20,7 +20,7 @@ services:
       - ./.env
 
   nginx:
-    build: .
+    # build: .ысз
       # context: ./api_yamdb  #
       # dockerfile: Dockerfile
     image: nginx:1.21.3-alpine
