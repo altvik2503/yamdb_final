@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # db container
   db:
     image: postgres:13.0-alpine
     volumes:
@@ -9,23 +8,17 @@ services:
     env_file:
       - ./.env
 
-  # web container
   web:
     image: altvik2503/yamdb_final:latest
     restart: always
     volumes:
-      # Контейнер web будет работать с данными, хранящиеся в томе static_value,
-      # через свою директорию /app/static/
       - static_value:/app/static/
-      # Данные, хранящиеся в томе media_value, будут доступны в контейнере web
-      # через директорию /app/media/
       - media_value:/app/media/
     depends_on:
       - db
     env_file:
       - ./.env
 
-  # nginx container
   nginx:
     build: .
       # context: ./api_yamdb  #
@@ -43,4 +36,4 @@ services:
 volumes:
   static_value:
   media_value:
-  db_data:
+  db_data:  #
