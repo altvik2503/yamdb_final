@@ -18,7 +18,8 @@ SECRET_KEY = os.getenv(
 )
 
 ALLOWED_HOSTS = [
-    '84.252.131.154', '127.0.0.1', 'localhost', 'altvik2503.ddns.net', 'web',
+    '84.252.131.154',
+    '127.0.0.1', 'localhost', 'altvik2503.ddns.net', 'web',
 ]
 
 
