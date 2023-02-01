@@ -11,9 +11,6 @@ services:
 
   # web container
   web:
-    build:
-      context: ../api_yamdb
-      dockerfile: Dockerfile
     image: altvik2503/yamdb_final:latest
     restart: always
     volumes:
@@ -30,6 +27,9 @@ services:
 
   # nginx container
   nginx:
+    build:
+      context: ./api_yamdb
+      dockerfile: Dockerfile
     image: nginx:1.21.3-alpine
     ports:
       - "80:80"
