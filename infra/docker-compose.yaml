@@ -28,7 +28,7 @@ services:
   # nginx container
   nginx:
     build: .
-      # context: ./api_yamdb
+      # context: ./api_yamdb  #
       # dockerfile: Dockerfile
     image: nginx:1.21.3-alpine
     ports:
